@@ -16,18 +16,29 @@ while not exit:
         citycode = city.get(cityname)
         if citycode:
             try:
-                url = ('http://www.weather.com.cn/data/cityinfo/%s.html'
-                % citycode)
+                url = ('http://m.weather.com.cn/data/%s.html' % citycode)
                 content = urllib.request.urlopen(url).read()
                 content = content.decode('utf-8')
                 data = json.loads(content)
                 result = data['weatherinfo']
-                str_temp = ('%s\n%s ~ %s') % (
-                result['weather'],
-                result['temp1'],
+                
+                str_temp1 = ('今天天气%s\n气温%s') % (
+                result['weather1'],
+                result['temp1']
+                )
+                print (str_temp1)
+                
+                str_temp2 = ('明天天天气%s\n气温%s') % (
+                result['weather2'],
                 result['temp2']
                 )
-                print (str_temp)
+                print (str_temp2)
+                
+                str_temp3 = ('后天天气%s\n气温%s') % (
+                result['weather3'],
+                result['temp3']
+                )
+                print (str_temp3)
             except:
                 print ('查询失败')
         else:

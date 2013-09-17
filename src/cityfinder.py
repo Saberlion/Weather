@@ -51,10 +51,10 @@ for p in provinces:
             i = i + 1
             if i == 20:
                 print ("休眠5秒")
-                time.sleep(5)
+                #time.sleep(5)
     usetime = (time.monotonic()  - start)
     print ("用时"+str(usetime))
-    print ("休眠20秒")
+    #print ("休眠20秒")
     time.sleep(20)
 #result += '}'
 result = '}'
